@@ -11,7 +11,10 @@ public class DialController : MonoBehaviour
     public AudioSource _sndToPlay;
     public bool _isPlayActive = false;
     public Sprite[] _levels;
-    public Beginlevel _lvlStart;
+
+    [Header("levels")]
+    public GameObject Level1;
+    
     // Update is called once per frame
     private void Start()
     {
@@ -21,7 +24,7 @@ public class DialController : MonoBehaviour
     {
         if (_isPlayActive == true)
         {
-            _lvlStart
+
         }
         else if(_isPlayActive == false)
         {
@@ -30,7 +33,7 @@ public class DialController : MonoBehaviour
     }
     public void OnPressPLay()
     {
-        _isPlayActive = !_isPlayActive;
+  
     }
     
     public void DialControl(int _dialRot)
@@ -38,7 +41,7 @@ public class DialController : MonoBehaviour
         if(_dialState + _dialRot == 1)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z+45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
         }
         else if (_dialState + _dialRot == 2)
         {
