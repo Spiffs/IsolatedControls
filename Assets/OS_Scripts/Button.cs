@@ -24,7 +24,7 @@ public class Button : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // mouse position
-            Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
             // collider check
             if (collider.OverlapPoint(mp))
