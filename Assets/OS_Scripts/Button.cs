@@ -5,7 +5,8 @@ using UILib;
 
 public class Button : MonoBehaviour
 {
-    public ButtonID LocalButtonID;
+    [SerializeField]
+    private ButtonID LocalButtonID;
 
     private bool IsPressed;
 
@@ -34,6 +35,11 @@ public class Button : MonoBehaviour
             
         }
     }
+
+    public ButtonID GetButtonID()
+    {
+        return LocalButtonID;
+    } // returns the button ID
 
     public bool GetPressed()
     {

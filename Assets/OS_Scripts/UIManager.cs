@@ -42,7 +42,7 @@ namespace UILib
                 Button cur = eachobject.GetComponent<Button>();
                 if (cur.GetPressed() == true)
                 {
-                    CurrentButton = cur.LocalButtonID;
+                    CurrentButton = cur.GetButtonID();
                 }
             }
 
