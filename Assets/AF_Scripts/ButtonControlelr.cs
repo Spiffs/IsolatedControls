@@ -7,6 +7,8 @@ public class ButtonControlelr : MonoBehaviour
     public GameObject _creditsText;
     public GameObject _titleText;
     public bool _creditOn = false;
+    public AudioClip[] _audButton;
+    public AudioSource _sndToPlay;
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +31,7 @@ public class ButtonControlelr : MonoBehaviour
            _titleText.SetActive(true);
            _creditOn = false;
         }
-
+        _sndToPlay.clip = _audButton[Random.Range(0, _audButton.Length)];
+        _sndToPlay.Play();
     }
 }
