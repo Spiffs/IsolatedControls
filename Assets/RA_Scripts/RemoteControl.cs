@@ -19,7 +19,11 @@ public class RemoteControl : MonoBehaviour
         //temp:
         //Check Button Inputs
         //int moveingLeft = boutt ? 1 : 0;
-        Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        //if (Input.GetAxis("Vertical") > 0)
+        //{
+        //    Up();
+        //}
+        //Vector2 moveDir = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Vector2 curPos = new Vector2(transform.position.x, transform.position.y);
         GetComponent<Rigidbody2D>().MovePosition(curPos + moveDir);
         moveDir = new Vector2(0, 0);
