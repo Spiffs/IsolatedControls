@@ -51,12 +51,12 @@ public class DialController : MonoBehaviour
                 SceneManager.LoadScene(2);
             else if (_dialState == 2)
                 SceneManager.LoadScene(3);
-            else if (_dialState == 3)
-                SceneManager.LoadScene(4);
-            else if (_dialState == 4)
-                SceneManager.LoadScene(5);
-            else if (_dialState == 5)
-                SceneManager.LoadScene(6);
+            //else if (_dialState == 3)
+               // SceneManager.LoadScene(4);
+            //else if (_dialState == 4)
+            //    SceneManager.LoadScene(5);
+            //else if (_dialState == 5)
+            //    SceneManager.LoadScene(6);
         }
         else
         {
@@ -91,28 +91,28 @@ public class DialController : MonoBehaviour
         }
         else if (_dialState + _dialRot == 3)
         {
-            _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
-            SetButtonActive();
-        }
-        else if (_dialState + _dialRot == 4)
-        {
-            _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
-            SetButtonActive();
-        }
-        else if (_dialState + _dialRot == 5)
-        {
-            _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
-            SetButtonActive();
-        }
-        else if (_dialState + _dialRot == 6)
-        {
             _dialState = 0;
             dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
+        //else if (_dialState + _dialRot == 4)
+        //{
+        //    _dialState += 1;
+        //    dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
+        //    SetButtonActive();
+        //}
+        //else if (_dialState + _dialRot == 5)
+        //{
+        //    _dialState += 1;
+        //    dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
+        //    SetButtonActive();
+        //}
+        //else if (_dialState + _dialRot == 6)
+        //{
+        //    _dialState = 0;
+        //    dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
+        //    SetButtonActive();
+        //}
 
         _sndToPlay.clip = _dialSound;
         _sndToPlay.Play();
