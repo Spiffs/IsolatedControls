@@ -182,8 +182,8 @@ namespace UILib
                     case ButtonID.D3:
                         {
                             if (ZoneProfiles[iZone][ButtonID.D3] == true)
-                                //CharacterComponent.
-                                break;
+                            { }    //CharacterComponent.
+                            break;
                         }
                     case ButtonID.D4:
                         {
