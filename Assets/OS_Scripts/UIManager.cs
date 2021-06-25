@@ -96,7 +96,7 @@ namespace UILib
             TSS.Add(new TextureStorageType(BlueOn, BlueOff));
 
             // zone profiles
-            
+
             /* Label:
                     Level 1 
                         Yellow = 0
@@ -105,7 +105,7 @@ namespace UILib
                     Level 2
                         
     */
-
+            ZoneProfiles = new List<Dictionary<ButtonID, bool>>();
             // yellow
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
