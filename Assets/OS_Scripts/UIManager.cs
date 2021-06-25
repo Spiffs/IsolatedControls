@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace UILib
@@ -108,17 +109,23 @@ namespace UILib
                     Win
                         = 0
                     Level 0
-                        
+                        Left = 4
+                        right = 5
                     Level 1 
                         Yellow = 1
                         Orange = 2
                         Green = 3
                     Level 2
+                        green = 6
+                        yellow = 7
+                        purple = 8
+                        Lblue = 9
+                        Orange = 10
                         
     */
             ZoneProfiles = new List<Dictionary<ButtonID, bool>>();
             // yellow
-
+            //0
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
                 {ButtonID.D1, false},
@@ -131,7 +138,7 @@ namespace UILib
                 {ButtonID.O3, true},
                 {ButtonID.O4, true}
             });
-
+            //1
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
                 {ButtonID.D1, false},
@@ -139,13 +146,13 @@ namespace UILib
                 {ButtonID.D3, true},
                 {ButtonID.D4, true},
                 {ButtonID.D5, false},
-                {ButtonID.O1, true},
-                {ButtonID.O2, true},
-                {ButtonID.O3, false},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
                 {ButtonID.O4, false}
             });
 
-            // orange
+            // 2
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
                 {ButtonID.D1, true},
@@ -153,13 +160,13 @@ namespace UILib
                 {ButtonID.D3, true},
                 {ButtonID.D4, true},
                 {ButtonID.D5, true},
-                {ButtonID.O1, true},
-                {ButtonID.O2, true},
-                {ButtonID.O3, false},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
                 {ButtonID.O4, false}
             });
 
-            // green
+            // 3
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
                 {ButtonID.D1, true},
@@ -167,9 +174,107 @@ namespace UILib
                 {ButtonID.D3, false},
                 {ButtonID.D4, false},
                 {ButtonID.D5, true},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            // 4
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, true},
+                {ButtonID.D2, false},
+                {ButtonID.D3, true},
+                {ButtonID.D4, true},
+                {ButtonID.D5, true},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            // 5
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, true},
+                {ButtonID.D2, true},
+                {ButtonID.D3, true},
+                {ButtonID.D4, false},
+                {ButtonID.D5, true},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            //6
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, true},
+                {ButtonID.D2, false},
+                {ButtonID.D3, false},
+                {ButtonID.D4, true},
+                {ButtonID.D5, false},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            // 7
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, false},
+                {ButtonID.D2, false},
+                {ButtonID.D3, true},
+                {ButtonID.D4, false},
+                {ButtonID.D5, true},
                 {ButtonID.O1, true},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            //8
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, false},
+                {ButtonID.D2, false},
+                {ButtonID.D3, true},
+                {ButtonID.D4, true},
+                {ButtonID.D5, false},
+                {ButtonID.O1, false},
                 {ButtonID.O2, true},
-                {ButtonID.O3, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            //9
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, true},
+                {ButtonID.D2, true},
+                {ButtonID.D3, false},
+                {ButtonID.D4, false},
+                {ButtonID.D5, false},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, false}
+            });
+
+            // 10
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, false},
+                {ButtonID.D2, false},
+                {ButtonID.D3, true},
+                {ButtonID.D4, false},
+                {ButtonID.D5, true},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
                 {ButtonID.O4, false}
             });
 
@@ -197,12 +302,12 @@ namespace UILib
             CurrentButton = 0;
             int iZone = CharacterComponent.GetIndex();
             int i = 0;
-            
+
             // for each loop to check each button sprite and whether its pressed 
             foreach (GameObject eachobject in buttons)
             {
                 Button cur = eachobject.GetComponent<Button>();
-                
+
                 // sprite correction
                 if (ZoneProfiles[iZone][cur.GetButtonID()] == true)
                 {
@@ -265,6 +370,18 @@ namespace UILib
                         {
                             if (ZoneProfiles[iZone][ButtonID.O2] == true)
                                 transform.GetComponent<DoorManager>().BlueDoorActivate();
+                            break;
+                        }
+                    case ButtonID.O3:
+                        {
+                            if (ZoneProfiles[iZone][ButtonID.O3] == true)
+                                SceneManager.LoadScene(0);
+                            break;
+                        }
+                    case ButtonID.O4:
+                        {
+                            if (ZoneProfiles[iZone][ButtonID.O4] == true)
+                                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                             break;
                         }
                 }
