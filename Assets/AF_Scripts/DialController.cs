@@ -15,6 +15,7 @@ public class DialController : MonoBehaviour
     public GameObject _levelPanel;
     public GameObject _titleText;
     public GameObject _creditsText;
+    public AudioClip[] _audButton;
 
     [Header("levels")]
     public RectTransform[] Levels;
@@ -68,6 +69,9 @@ public class DialController : MonoBehaviour
             _titleText.SetActive(false);
             _creditsText.SetActive(false);
             SetButtonActive();
+
+            _sndToPlay.clip = _audButton[Random.Range(0, _audButton.Length)];
+            _sndToPlay.Play();
         }
     }
     
