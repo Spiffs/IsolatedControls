@@ -1747,7 +1747,6 @@ GameObject:
   - component: {fileID: 647212129}
   - component: {fileID: 647212130}
   - component: {fileID: 647212131}
-  - component: {fileID: 647212132}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1881,20 +1880,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0d1a8a5ac4a625f44998931d53e75a91, type: 3}
   - {fileID: 8300000, guid: 6161a4bc24f468b4bb14352219de6705, type: 3}
   - {fileID: 8300000, guid: 0008a02c009db0b43889cfaa7afcbb29, type: 3}
---- !u!114 &647212132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647212125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdbbb48b4cb36740a39f5dc6049ae37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _smokeEffect: {fileID: 68707743457401187, guid: b30b9e8007bb52d41a8e21d3d31a2c0d, type: 3}
-  _smokeAnim: {fileID: 0}
 --- !u!1 &675353211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,7 +3812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sound:
   - {fileID: 8300000, guid: 69791ae5f264432498620da9b4d68e3f, type: 3}
-  - {fileID: 8300000, guid: f09bb10e295214242bb7ffc6c34dd900, type: 3}
+  - {fileID: 8300000, guid: 316a4eb1472c20c49b3415456c152af9, type: 3}
   _sndToPlay: {fileID: 1963437229}
 --- !u!1 &1324626974
 GameObject:
