@@ -7,10 +7,15 @@ public class ControlZone : MonoBehaviour
 {
     public int index = 0;
     public bool killZone = false;
+    public bool winZone = false;
     private int previousIndex;
     private Color color;
     private void OnDrawGizmos()
     {
+        if (winZone == true)
+        {
+            index = 69;
+        }
         if (index != previousIndex)
         {
             if (!killZone)
@@ -24,7 +29,7 @@ public class ControlZone : MonoBehaviour
                         color = Color.green;
                         break;
                     case 2:
-                        color = Color.red;
+                        color = Color.gray;
                         break;
                     case 3:
                         color = Color.blue;
@@ -46,14 +51,14 @@ public class ControlZone : MonoBehaviour
             }
             else
             {
-                color = Color.black;
+                color = Color.red;
             }
             GetComponent<SpriteRenderer>().color = color;
             previousIndex = index;
         }
         if (killZone)
         {
-            GetComponent<SpriteRenderer>().color = Color.black;
+            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
