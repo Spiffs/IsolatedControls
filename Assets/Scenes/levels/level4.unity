@@ -3053,6 +3053,10 @@ PrefabInstance:
       propertyPath: killZone
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2532464267124601663, guid: 637986e59b469d14da11aa6eee47300b, type: 3}
+      propertyPath: winZone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4386215634310372349, guid: 637986e59b469d14da11aa6eee47300b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.08
