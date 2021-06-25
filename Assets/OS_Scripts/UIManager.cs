@@ -20,13 +20,22 @@ namespace UILib
 
     public class TextureStorageType
     {
-        public Texture2D Active;
-        public Texture2D Unactive;
+        public Sprite Active;
+        public Sprite Unactive;
 
-        public TextureStorageType(Texture2D tActive, Texture2D tUnactive)
+        public TextureStorageType(Sprite tActive, Sprite tUnactive)
         {
             Active = tActive;
             Unactive = tUnactive;
+        }
+
+        public Sprite GetTexture(bool isActive)
+        {
+            if (isActive)
+                return Active;
+            else
+                return Unactive;
+
         }
     }
 
@@ -44,22 +53,22 @@ namespace UILib
         public List<GameObject> buttons = new List<GameObject>();
 
         // button textures
-        [SerializeField] private Texture2D UpOn;
-        [SerializeField] private Texture2D UpOff;
-        [SerializeField] private Texture2D LeftOn;
-        [SerializeField] private Texture2D LeftOff;
-        [SerializeField] private Texture2D StopOn;
-        [SerializeField] private Texture2D StopOff;
-        [SerializeField] private Texture2D RightOn;
-        [SerializeField] private Texture2D RightOff;
-        [SerializeField] private Texture2D DownOn;
-        [SerializeField] private Texture2D DownOff;
-        [SerializeField] private Texture2D RedOn;
-        [SerializeField] private Texture2D RedOff;
-        [SerializeField] private Texture2D BlueOn;
-        [SerializeField] private Texture2D BlueOff;
-        [SerializeField] private Texture2D DefOn;
-        [SerializeField] private Texture2D DefOff;
+        [SerializeField] private Sprite UpOn;
+        [SerializeField] private Sprite UpOff;
+        [SerializeField] private Sprite LeftOn;
+        [SerializeField] private Sprite LeftOff;
+        [SerializeField] private Sprite StopOn;
+        [SerializeField] private Sprite StopOff;
+        [SerializeField] private Sprite RightOn;
+        [SerializeField] private Sprite RightOff;
+        [SerializeField] private Sprite DownOn;
+        [SerializeField] private Sprite DownOff;
+        [SerializeField] private Sprite RedOn;
+        [SerializeField] private Sprite RedOff;
+        [SerializeField] private Sprite BlueOn;
+        [SerializeField] private Sprite BlueOff;
+        [SerializeField] private Sprite DefOn;
+        [SerializeField] private Sprite DefOff;
 
         // list of all textures to easily switch in a for loop
         private List<TextureStorageType> TSS; // Texture Switch Storage
@@ -87,6 +96,16 @@ namespace UILib
             TSS.Add(new TextureStorageType(BlueOn, BlueOff));
 
             // zone profiles
+            
+            /* Label:
+                    Level 1 
+                        Yellow = 0
+                        Orange = 1
+                        Green = 3
+                    Level 2
+                        
+    */
+
             // yellow
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
@@ -151,20 +170,34 @@ namespace UILib
         {
             ButtonID CurrentButton;
             CurrentButton = 0;
-
+            int iZone = CharacterComponent.GetIndex();
+            int i = 0;
+            
+            // for each loop to check each button sprite and whether its pressed 
             foreach (GameObject eachobject in buttons)
             {
                 Button cur = eachobject.GetComponent<Button>();
+                
+                // sprite correction
+                if (ZoneProfiles[iZone][cur.GetButtonID()] == true)
+                {
+                    eachobject.GetComponent<SpriteRenderer>().sprite = TSS[i].GetTexture(true);
+                }
+                else
+                    eachobject.GetComponent<SpriteRenderer>().sprite = TSS[i].GetTexture(false);
+
+                // if button is pressed
                 if (cur.GetPressed() == true)
                 {
                     CurrentButton = cur.GetButtonID();
                 }
+
+                i++;
             }
 
+            // which button is pressed
             if (CurrentButton != 0)
             {
-                int iZone = CharacterComponent.GetIndex();
-
                 switch (CurrentButton)
                 {
                     case ButtonID.D1:
@@ -182,7 +215,7 @@ namespace UILib
                     case ButtonID.D3:
                         {
                             if (ZoneProfiles[iZone][ButtonID.D3] == true)
-                            { }    //CharacterComponent.
+                                CharacterComponent.Stop();
                             break;
                         }
                     case ButtonID.D4:
@@ -199,28 +232,18 @@ namespace UILib
                         }
                     case ButtonID.O1:
                         {
-                            // TODO: DOOR SCRIPT
+                            if (ZoneProfiles[iZone][ButtonID.O1] == true)
+                                transform.GetComponent<DoorManager>().RedDoorActivate();
                             break;
                         }
                     case ButtonID.O2:
                         {
-                            // TODO: DOOR SCRIPT
+                            if (ZoneProfiles[iZone][ButtonID.O2] == true)
+                                transform.GetComponent<DoorManager>().BlueDoorActivate();
                             break;
                         }
-                    case ButtonID.O3:
-                        {
-                            // TODO: OTHER
-                            break;
-                        }
-                    case ButtonID.O4:
-                        {
-                            // TODO: OTHER
-                            break;
-                        }
-
                 }
             }
-
         }
     }
 }
