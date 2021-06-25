@@ -55,7 +55,46 @@ namespace UILib
                             CharacterComponent.Up();
                             break;
                         }
-
+                    case ButtonID.D2:
+                        {
+                            CharacterComponent.Left();
+                            break;
+                        }
+                    case ButtonID.D3:
+                        {
+                            // TODO: STOP SCRIPT
+                            break;
+                        }
+                    case ButtonID.D4:
+                        {
+                            CharacterComponent.Right();
+                            break;
+                        }
+                    case ButtonID.D5:
+                        {
+                            CharacterComponent.Down();
+                            break;
+                        }
+                    case ButtonID.O1:
+                        {
+                            // TODO: DOOR SCRIPT
+                            break;
+                        }
+                    case ButtonID.O2:
+                        {
+                            // TODO: DOOR SCRIPT
+                            break;
+                        }
+                    case ButtonID.O3:
+                        {
+                            // TODO: OTHER
+                            break;
+                        }
+                    case ButtonID.O4:
+                        {
+                            // TODO: OTHER
+                            break;
+                        }
 
                 }
             }
