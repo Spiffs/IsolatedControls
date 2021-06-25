@@ -71,7 +71,7 @@ public class ControlZone : MonoBehaviour
                 return;
             }
             collision.GetComponent<RemoteControl>().SetIndex(index);
-            Debug.Log("Zone: " + name);
+            Debug.Log("Zone: " + index);
         }
     }
 }

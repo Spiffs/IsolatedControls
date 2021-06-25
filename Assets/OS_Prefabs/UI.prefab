@@ -62,7 +62,7 @@ Transform:
   m_GameObject: {fileID: 6697859902502561223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.075214, y: 2.075214, z: 2.075214}
   m_Children:
   - {fileID: 6697859902147973320}
   - {fileID: 6697859903169381216}
@@ -92,22 +92,22 @@ MonoBehaviour:
   - {fileID: 8022018643601119960}
   - {fileID: 8022018644018946395}
   - {fileID: 8022018644340949759}
-  UpOn: {fileID: 0}
-  UpOff: {fileID: 0}
-  LeftOn: {fileID: 0}
-  LeftOff: {fileID: 0}
-  StopOn: {fileID: 0}
-  StopOff: {fileID: 0}
-  RightOn: {fileID: 0}
-  RightOff: {fileID: 0}
-  DownOn: {fileID: 0}
-  DownOff: {fileID: 0}
-  RedOn: {fileID: 0}
-  RedOff: {fileID: 0}
-  BlueOn: {fileID: 0}
-  BlueOff: {fileID: 0}
-  DefOn: {fileID: 0}
-  DefOff: {fileID: 0}
+  UpOn: {fileID: 21300000, guid: b2029a7365d99014e92b80300ce47805, type: 3}
+  UpOff: {fileID: 21300000, guid: 27ac0c2b65ef70a42af74f38610d1c28, type: 3}
+  LeftOn: {fileID: 21300000, guid: 8f2f1257f8c31ea4ba0c041aaef8f7f9, type: 3}
+  LeftOff: {fileID: 21300000, guid: da401de84044c9540ba729ad3b7fd7a3, type: 3}
+  StopOn: {fileID: 21300000, guid: 7977e86dcf6797347b735bb548a6846b, type: 3}
+  StopOff: {fileID: 21300000, guid: 27cca665254f440478a49db6a57f3b9d, type: 3}
+  RightOn: {fileID: 21300000, guid: a2668287b8d802c4a892ba59cb5588ee, type: 3}
+  RightOff: {fileID: 21300000, guid: c294a0a67e966b44ea8fe27be7215459, type: 3}
+  DownOn: {fileID: 21300000, guid: 3e7a0a454e9c28049831d7dd8c8754d4, type: 3}
+  DownOff: {fileID: 21300000, guid: 6e6cda6915e50834490f39c87184ae91, type: 3}
+  RedOn: {fileID: 21300000, guid: 6d0551609ed3ec740850261ffae76de5, type: 3}
+  RedOff: {fileID: 21300000, guid: 269d0e7dccf66a0428e710b346b5fab2, type: 3}
+  BlueOn: {fileID: 21300000, guid: 2f12d6d8d89b9e4498503fdda713a434, type: 3}
+  BlueOff: {fileID: 21300000, guid: b2ebe5feaf3fc7448823a11d952cc44a, type: 3}
+  DefOn: {fileID: 21300000, guid: 59e97fddbbeda004383ed0ecdc21b6c9, type: 3}
+  DefOff: {fileID: 21300000, guid: 270effaa9080cae47a3ae4227acaf06a, type: 3}
 --- !u!114 &6697859902605437859
 MonoBehaviour:
   m_ObjectHideFlags: 0
