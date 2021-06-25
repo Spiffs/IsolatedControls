@@ -76,37 +76,37 @@ public class DialController : MonoBehaviour
         if(_dialState + _dialRot == 1)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
         else if (_dialState + _dialRot == 2)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
         else if (_dialState + _dialRot == 3)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
         else if (_dialState + _dialRot == 4)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
         else if (_dialState + _dialRot == 5)
         {
             _dialState += 1;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
         else if (_dialState + _dialRot == 6)
         {
             _dialState = 0;
-            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z + 45));
+            dialTransform.Rotate(new Vector3(0, 0, dialTransform.rotation.z - 45));
             SetButtonActive();
         }
 
