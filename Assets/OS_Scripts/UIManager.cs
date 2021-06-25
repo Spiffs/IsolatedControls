@@ -105,15 +105,33 @@ namespace UILib
             // zone profiles
 
             /* Label:
+                    Win
+                        = 0
+                    Level 0
+                        
                     Level 1 
-                        Yellow = 0
-                        Orange = 1
+                        Yellow = 1
+                        Orange = 2
                         Green = 3
                     Level 2
                         
     */
             ZoneProfiles = new List<Dictionary<ButtonID, bool>>();
             // yellow
+
+            ZoneProfiles.Add(new Dictionary<ButtonID, bool>
+            {
+                {ButtonID.D1, false},
+                {ButtonID.D2, false},
+                {ButtonID.D3, false},
+                {ButtonID.D4, false},
+                {ButtonID.D5, false},
+                {ButtonID.O1, false},
+                {ButtonID.O2, false},
+                {ButtonID.O3, true},
+                {ButtonID.O4, true}
+            });
+
             ZoneProfiles.Add(new Dictionary<ButtonID, bool>
             {
                 {ButtonID.D1, false},

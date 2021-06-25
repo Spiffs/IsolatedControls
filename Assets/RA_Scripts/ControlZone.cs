@@ -14,7 +14,7 @@ public class ControlZone : MonoBehaviour
     {
         if (winZone == true)
         {
-            index = 69;
+            index = 0;
         }
         if (index != previousIndex)
         {
