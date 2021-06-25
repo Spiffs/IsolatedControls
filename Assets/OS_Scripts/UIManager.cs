@@ -94,6 +94,13 @@ namespace UILib
             TSS.Add(new TextureStorageType(DownOn, DownOff));
             TSS.Add(new TextureStorageType(RedOn, RedOff));
             TSS.Add(new TextureStorageType(BlueOn, BlueOff));
+            // defaults
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
+            TSS.Add(new TextureStorageType(DefOn, DefOff));
 
             // zone profiles
 
